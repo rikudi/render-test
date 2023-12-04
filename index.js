@@ -42,6 +42,8 @@ app.use(cors())
 //initialize express
 app.use(express.json())
 
+app.use(express.static('dist'))
+
 //create custom Morgan token for HTTP POST requests
 morgan.token('post-data', (request, response) => {
     return request.method === 'POST' ? JSON.stringify(request.body) : ''
